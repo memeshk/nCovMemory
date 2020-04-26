@@ -1,0 +1,205 @@
+# 2020新冠肺炎记忆：报道、非虚构与个人叙述（持续更新）
+
+收录了2020年新型冠状病毒感染的肺炎（2019-nCoV, i.e., Novel Coronavirus Pneumonia, NCP）相关媒体报道、非虚构作品和亲历者个人叙述。
+
+本站有一个更便于在手机上阅读的[版本](https://2019ncovmemory.github.io/nCovMemory/)。
+
+过去一日更新的文章前会加入🔥，已失效的链接用❌表示，附转载链接。截图会比链接稍晚更新，但一般不超过24小时。
+
+一部分 archive 由网友提供，深表感激。同时感谢许多网友与我们共享资料并提供建议。我们持续欢迎网友的参与和贡献，请见[如何贡献](#如何贡献)。
+
+
+## 声明
+
+这个站点的目的，是建立一个方便网友及研究人士（如自然语言处理、疫情防治）取用相关资料的资料库，并无其他考量。其中所有内容均来自网络。我们十分感谢创作这些文章的传媒、记者及其他写作者。本文档除搜集行为本身，并无原创性，仅为交流学习之用。这些文章的版权属于原创的作者个人及获授权发布之传媒，若遇侵权投诉，将视情况撤除相关内容。
+
+## 目录
+
+* [介绍](#介绍)
+  * [凡例](#凡例)
+  * [项目结构](#项目结构)
+* [如何贡献](#如何贡献)
+* [工具](#工具)
+* [联系](#联系)
+* [传媒报道与非虚构写作](#传媒报道与非虚构写作)
+{{#each non_fiction.medias}}
+  * [{{@this}}](#{{link @this}})
+{{/each}}
+* [亲历者个人叙述](#亲历者个人叙述)
+{{#each narrative.medias}}
+  * [{{narrative @this}}](#{{narrative_link @this}})
+{{/each}}
+* [友情站点](#友情站点)
+
+## 介绍
+
+此处收集内地各类传媒和公众号发布（原创或转载）的有关新型冠状病毒感染的肺炎(2019-nCoV)的深度报道、非虚构作品及亲历者个人叙述，并将持续更新。
+
+希望这一选编有助于理解疫情及其影响下的每一个人，并帮助相关研究者做初步的资料收集。
+
+### 凡例
+
+* 分类及收录标准：
+
+  * 报道和非虚构写作：详尽细致或角度新颖，且来自较可信赖的媒体或公众号，尤其是对一线、基层（不只是最受关注的，而是包括各地、各群体、各行业）的非虚构写作和描述性报道。有少量摄影报道。作者不是文中的叙述者或受访者。
+
+  * 亲历者个人叙述：疫情影响下的个体记录其见闻和思考的文章。文中的叙述者是作者本人。主要来自微信公众号。（豆瓣上的叙述可参见[友情站点](#友情站点)中列出的一些。）
+  
+  * 本站不收录评论、分析、科普等类别的作品。
+
+### 项目结构
+
+```
+├─archive                          文章的存档，目前提供jpg格式
+│  └─jpg
+│    ├─1.jpg
+│    └─...
+├─data                             csv格式的文章数据
+│  └─data.csv
+├─docs                             一个用于展示README的 Github Page
+├─gh-page
+├─template                         README模板
+│  └─README.handlebars
+├─utils                            构建README的工具
+│  ├─generateReadmeFromCsv.js
+│  └─...
+└─README.md                        主文档
+```
+
+## 如何贡献
+
+欢迎网友参与贡献，为本站更新、补充、推荐文章，成为贡献者。贡献的方式是通过 **[issue](https://github.com/2019ncovmemory/nCovMemory/issues)** 提交原文链接和 archive。一些工具请参见[工具](#工具)。
+
+为了方便整理与阅读，请贡献者在提交新文章时，遵循以下的指南。我们将会优先考虑收录符合 **指南标准** 的贡献。
+
+* 收录文章：请参看[凡例](#凡例)中说明的选文标准。亦请确保文章是免费并对所有互联网使用者开放的，我们不会收录任何需要付费才可以阅读的文章。
+
+* 一个完整的条目需包括：*日期，原始链接，archive*  三个要素。
+
+  * 日期：需要标注 **原始文章** 发表日期。
+
+  * 原始链接：请尽量寻找 **原始链接**，并将链接简化，去除会包含个人隐私的内容，详情请见[issue #13](https://github.com/2019ncovmemory/nCovMemory/issues/13)。若原始链接已失效，请注明并提供一个转载链接。
+
+  * archive：产生 archive 时请确保文章内图片已完整加载。不同的 archive [工具](#工具)在不同的网站上效果可能不同。
+
+* 今后 **无需** 再提供截图。我们会用工具自动生成。唯一的例外是，如原始链接当时已失效，而您存有原文截图，则请提供此截图。
+
+* 如有多个条目希望贡献，请在一个issue内列出。
+
+* 我们创建了4个Labels来标记不同种类的issue。请贡献者在创建issue时按需标记。正确标记的issue会更容易得到关注。
+
+  * ![#098728](https://placehold.it/15/098728/000000?text=+) 建议：对此站的建议。
+
+  * ![#e99695](https://placehold.it/15/e99695/000000?text=+) 新文章：新文章条目。
+
+  * ![#f490ea](https://placehold.it/15/f490ea/000000?text=+) 更新链接：更新已有但错误或不可使用的链接。
+
+  * ![#fef2c0](https://placehold.it/15/fef2c0/000000?text=+) 讨论：讨论其他事宜。
+
+本站将不再大规模增收媒体、公众号，也不收录评论、分析、科普等作品，希望理解。欢迎网友自行整理，并告知地址，以补本站之不足，我们将列入[友情站点](#友情站点)内。
+
+## 工具
+
+我们使用[这个程序](https://gist.github.com/2019ncovmemory/1e4225aa73011cb0d6e544aad1468541)以及[这个插件](https://gofullpage.com/)产生截图。
+
+我们使用[这个网站](https://www.iloveimg.com/crop-image)编辑截图大小。
+
+我们使用[archive.is](https://archive.is/), [archive.org](https://archive.org)等产生archive。前者用于微信公众号，后者用于一般网页。
+
+## 联系
+
+如发现链接失效，或有其他问题、建议，请发送email至2019ncovmemory@gmail.com。
+
+## 传媒报道与非虚构写作
+
+{{#each non_fiction.articles}}
+### {{@key}}
+
+| 日期 | 标题 | 原始URL| 截图 | archive |
+|---|:----------|---|---|---|
+{{#each @this}}
+|{{date}}|{{#if is_new}}🔥 {{/if}}{{table title}}|{{#if is_deleted}}[❌]({{{url}}}){{#if alternative}}<sup>*[转载]({{{alternative}}})*</sup>{{/if}}{{else}}[link]({{{url}}}){{/if}}|{{#if jpg}}[link]({{{jpg}}}){{else if png}}[link]({{{png}}}){{else}}待补{{/if}}|{{#if archive}}[link]({{{archive}}}){{else}}待补{{/if}}|
+{{/each}}
+
+{{/each}}
+## 亲历者个人叙述
+
+{{#each narrative.articles}}
+### {{narrative @key}}
+
+| 日期 | 标题 | 原始URL| 截图 | archive |
+|---|:----------|---|---|---|
+{{#each @this}}
+|{{date}}|{{#if is_new}}🔥 {{/if}}{{table title}}|{{#if is_deleted}}[❌]({{{url}}}){{#if alternative}}<sup>*[转载]({{{alternative}}})*</sup>{{/if}}{{else}}[link]({{{url}}}){{/if}}|{{#if jpg}}[link]({{{jpg}}}){{else if png}}[link]({{{png}}}){{else}}待补{{/if}}|{{#if archive}}[link]({{{archive}}}){{else}}待补{{/if}}|
+{{/each}}
+
+{{/each}}
+## 友情站点
+
+### 本站相关的翻译和存档
+
+很多网友为文章做了翻译、备份等，如：
+
+#### [Mainland News Outlets Coverage on 2019-nCoV](https://docs.google.com/document/d/1RqYvfEbLhcyH8rhw0xLpjc2w0JqPBQINzj3ORE-Jka0/edit?usp=sharing)
+
+由 Muyi Xiao, Shen Lu, Ye Ming, Nancy Tang, Bessie Du, Miles Goscha 翻译了文章标题，并附有 archive ，截止02-01。
+
+目前由另一些网友发起的翻译项目与此项目计划合作翻译文章内容，正招募译者，详见[issue #86](https://github.com/2019ncovmemory/nCovMemory/issues/86)。
+
+#### [NewsCoverageOnWuhan](https://github.com/SaveWuhan/NewsCoverageOnWuhan)
+
+文字版本的备份。可于 [GitBook](https://freewuhan2020.gitbook.io/wuhan2020/) 阅读。
+
+#### [Lest We Forget - Wuhan](https://github.com/lestweforget/wuhan2019)
+
+pdf 版本的备份，有日期、标题备查。来源不限于本站。
+
+尚有其他网友制作了截图、 pdf 和 archive 备份并分享给我们。一并致谢！
+
+### 独立的工作
+
+本站之外，许多网友也在做报道、个体叙述、网上舆论的整理和记录，如：
+
+#### [2019-nCoV 社交媒体文章列表](https://github.com/lalambdada/2019-nCoV)
+
+`yaml` 格式的文章列表。含微信、豆瓣两部分。
+
+#### [公众号文章存档: 2019-nCoV](https://2019-ncov.sogiecn.com/)
+
+收录微信公众号上的文章，含原文链接、网页存档、截图存档。
+
+#### [2020 Wuhan Individual Stories](https://github.com/jiayiliujiayi/2020nCov_individual_archives)
+
+备份普通人在疫情期间的记录，主要来自豆瓣，未来可能有所扩增。
+
+#### [Internet Archive of 2019-nCoV](https://www.notion.so/Internet-Archive-of-2019-nCoV-49f563331d4145c1865f6cc8f0c05132)
+
+致力于收集个体的、片段的，甚至被删了也没人知道的叙述，保存至 notion。目前主要是豆瓣，可能延伸到微博、个人公众号等。
+
+#### [疫情之下的劳动者——中文媒体报道收集（持续更新）](https://note.youdao.com/ynoteshare1/index.html?id=eee7c8c3d7b8b054dc94d8abd1a211d8&type=note)
+
+整理了劳动者们在疫情中的所作所为。按行业编排。
+
+#### [2020新型冠状病毒报道汇总](https://shimo.im/sheets/QjTYy6rgVV3WDRkh/MODOC/)
+
+分为媒体报道、自媒体评论或报道、热门微博。
+
+#### [Anti404 - 2019nCov信息ICU](https://shimo.im/docs/onq7MwVO6pf4FjA9/read)
+
+旨在保存舆情线索，记录个体遭遇。分专题编排。
+
+#### [2019肺炎疫情新闻赛博坟场](https://t.me/wuhancensored)
+
+记录网上曾被消失、篡改的内容。
+
+#### [疫情与舆情：武汉新冠肺炎时间线TIMELINE](https://github.com/Pratitya/wuhan2020-timeline)
+
+记录自2019年12月起武汉新冠肺炎疫情进展的时间线。以社会学年鉴模式编撰。
+
+#### [Academic2019-nCoV](https://github.com/Academic-nCoV/2019-nCoV)
+
+每日发布疫情相关的海外学术、非学术信息。
+
+#### [OpenSourceWuhan](https://weileizeng.github.io/OpenSourceWuhan/)
+
+一份在对抗肺炎期间的开源项目整理。
